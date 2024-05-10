@@ -1,13 +1,11 @@
 // Copyright 2021 NNTU-CS
 #include "train.h"
 
-Train::Train()
-{
+Train::Train() {
     countOp = 0;
     first = nullptr;
 }
-void Train::addCage(bool light)
-{
+void Train::addCage(bool light) {
     Cage* cage = new Cage;
     cage->light = light;
     cage->next = nullptr;
@@ -27,8 +25,7 @@ void Train::addCage(bool light)
         first->prev = cage;
     }
 }
-int Train::getLength()
-{
+int Train::getLength() {
     int curLen = 0;
     Cage* current = first;
     current->light = true;
@@ -46,11 +43,9 @@ int Train::getLength()
             }
             if (!current->light)
                 return finLen;
-
         }
     }
 }
-int Train::getOpCount()
-{
+int Train::getOpCount() {
     return countOp;
 }
